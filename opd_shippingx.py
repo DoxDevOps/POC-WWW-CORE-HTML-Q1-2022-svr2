@@ -67,7 +67,7 @@ for site_id in cluster['site']:
                 'ip_address'] + " 'cd /var/www/html/BHT-Core/apps/OPD && ./opd_setup.sh'"
             os.system(run_opd_script)
             result = Connection("" + site['username'] + "@" + site['ip_address'] + "").run(
-                'cd /var/www/html/BHT-Core/apps/OPD && git describe', hide=True)
+                'cd /var/www/BHT-Core/apps/OPD && git describe', hide=True)
             msg = "{0.stdout}"
 
             version = msg.format(result).strip()
